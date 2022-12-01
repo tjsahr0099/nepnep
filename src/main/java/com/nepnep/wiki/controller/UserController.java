@@ -1,6 +1,7 @@
 package com.nepnep.wiki.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,4 +32,13 @@ public class UserController {
 //		return "s";
 	}
 	
+	
+	@PostMapping("/createToken")
+	public String createToken(){		
+		
+		
+		
+		throw new ApiException(ErrorCode.USER_NOT_FOUND);
+//		return "s";
+	}
 }
