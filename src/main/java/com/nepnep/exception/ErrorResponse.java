@@ -1,4 +1,4 @@
-package com.nepnep.wiki.exception;
+package com.nepnep.exception;
 
 import java.time.LocalDateTime;
 

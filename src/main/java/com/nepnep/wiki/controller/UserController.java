@@ -4,9 +4,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nepnep.exception.ApiException;
+import com.nepnep.exception.ErrorCode;
 import com.nepnep.wiki.common.URLs;
-import com.nepnep.wiki.exception.ApiException;
-import com.nepnep.wiki.exception.ErrorCode;
 
 import lombok.extern.slf4j.Slf4j;
 
