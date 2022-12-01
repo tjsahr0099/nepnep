@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nepnep.wiki.common.URLs;
+import com.nepnep.wiki.exception.ApiException;
+import com.nepnep.wiki.exception.ErrorCode;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -15,7 +17,7 @@ public class UserController {
 
 	
 	@GetMapping("/list")
-	public String getUsers() {		
+	public String getUsers(){		
 		
 		
 		log.debug("");
@@ -24,7 +26,9 @@ public class UserController {
 		log.error("");
 		log.warn("");
 		
-		return "s";
+		
+		throw new ApiException(ErrorCode.USER_NOT_FOUND);
+//		return "s";
 	}
 	
 }
