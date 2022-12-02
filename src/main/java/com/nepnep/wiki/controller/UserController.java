@@ -18,12 +18,12 @@ public class UserController {
 
 	
 	@GetMapping("/list")
-	public String getUsers(){		
+	public String getUsers(String test){		
 		
 		
-		log.debug("");
+//		log.debug("{}",test);
 		log.trace("");
-		log.info("");
+		log.info("{}",test);
 		log.error("");
 		log.warn("");
 		
