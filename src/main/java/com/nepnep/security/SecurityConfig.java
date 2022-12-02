@@ -15,9 +15,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-	/**
-	 * https://gksdudrb922.tistory.com/217#MemberRepository
-	 */
 
 	private final JwtTokenProvider jwtTokenProvider;
 
