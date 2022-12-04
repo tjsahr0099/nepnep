@@ -8,5 +8,7 @@ public class URLs {
 	public final static String CATEGORY = prefix + "/category";
 	public final static String WIKI_CONTENTS = prefix + "/wikicont";	
 	
+	public final static String QUERY_MAKER = prefix;
+	
 	
 }
