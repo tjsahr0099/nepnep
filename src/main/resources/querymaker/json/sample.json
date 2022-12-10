@@ -1,0 +1,50 @@
+{
+    "tables": [
+        {
+            "TBL_COM": [
+                "COM_NAME",
+                "COM_ADD"
+            ],
+            "TBL_EMP": [
+                "NAME",
+                "BIRTH",
+                "TEL"
+            ]
+        }
+    ],
+    "wheres": [
+        {
+            "type": "eq",
+            "operator": "and",
+            "leftCol": "TBL_COM.COM_ID",
+            "rightCol": "TBL_EMP.COM_ID"
+        }
+    ],
+    "groups": [
+        {
+            "col": "TBL_COM.COM_NAME"
+        },
+        {
+            "col": "TBL_COM.COM_ADD"
+        },
+        {
+            "col": "TBL_EMP.NAME"
+        },
+        {
+            "col": "TBL_EMP.BIRTH"
+        },
+        {
+            "col": "TBL_EMP.TEL"
+        }
+    ],
+    "orders": [
+        {
+            "col": "TBL_COM.COM_NAME",
+            "type": "asc"
+        },
+        {
+            "col": "TBL_EMP.NAME",
+            "type": "desc"
+        }
+    ]
+}
