@@ -37,10 +37,11 @@ public class QueryMakerServiceImpl implements QueryMakerService{
 		List<BoardVO> boardVOList = queryMakerMapper.select1(testQuery);
 
 
-		//2번 (SqlProvider) SQL BUILDER
+		//2번 (SqlProvider) SQL BUILDER    https://mybatis.org/mybatis-3/ko/statement-builders.html
 		log.info("ResultBySqlProvider", queryMakerMapper.selectBySqlProvider());
 		SqlProvider sqlProvider = new SqlProvider();
 		System.out.println(sqlProvider.mySelect());
+
 
 
 		log.info("executeQuery 종료");
@@ -74,10 +75,10 @@ public class QueryMakerServiceImpl implements QueryMakerService{
 
 		StringBuilder sb = new StringBuilder();
 
-		String column = Optional.ofNullable(input.get("column")).orElseThrow(() -> new ApiException(ErrorCode.REQUIRED_PARAM_NOT_PRESENT));
-		String table = Optional.ofNullable(input.get("table")).orElseThrow(() -> new ApiException(ErrorCode.REQUIRED_PARAM_NOT_PRESENT)).toUpperCase();
-		String condition = input.get("condition");
-		String value = input.get("value");
+		String column = Optional.ofNullable(input.get(SqlEnum.COLUMN.getQueryStr())).orElseThrow(() -> new ApiException(ErrorCode.REQUIRED_PARAM_NOT_PRESENT));
+		String table = Optional.ofNullable(input.get(SqlEnum.TABLE.getQueryStr())).orElseThrow(() -> new ApiException(ErrorCode.REQUIRED_PARAM_NOT_PRESENT)).toUpperCase();
+		String condition = input.get(SqlEnum.CONDITION.getQueryStr());
+		String value = input.get(SqlEnum.VALUE.getQueryStr());
 
 		sb.append(SqlEnum.SELECT.getQueryStr());
 		if(true) {  //컬럼 검증
