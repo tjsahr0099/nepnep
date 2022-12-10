@@ -1,10 +1,16 @@
 package com.nepnep.querymaker.service;
 
+import com.nepnep.querymaker.model.BoardVO;
+import com.nepnep.querymaker.model.ResultResponseDto;
+import org.springframework.http.ResponseEntity;
+
 import java.util.List;
 import java.util.Map;
 
 public interface QueryMakerService {
 	
-	public List<Map<String,Object>> executeQuery(Map<String,Object> input);
+	ResponseEntity<ResultResponseDto> executeQuery(Map<String,String> input);
+
+
 
 }
