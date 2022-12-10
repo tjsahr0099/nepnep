@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.nepnep.querymaker.mapper.QueryMakerMapper">
-  
-	<select id="test" resultType="String">
-		SELECT 1 FROM DUAL
+
+	<resultMap id="schemaMap" type="com.nepnep.querymaker.model.SchemaVO">
+		<result column="TABLE_NAME" property="tableName"/>
+	</resultMap>
+	
+	<resultMap id="tableMap" type="com.nepnep.querymaker.model.TableVO">
+		<result column="Field" property="field"/>
+	</resultMap>
+
+	<select id="selectTableName" resultMap="schemaMap">
+		SELECT TABLE_NAME FROM information_schema.tables WHERE TABLE_SCHEMA = 'study_db'
 	</select>
-  
+	
+	<select id="selectField" parameterType="String" resultMap="tableMap">
+		show columns from ${tableName}
+	</select>
+	
+	<select id="executeQuery" parameterType="String" resultType="map">
+		${query}
+	</select>
   
 </mapper>

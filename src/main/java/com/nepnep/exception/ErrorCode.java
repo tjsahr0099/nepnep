@@ -13,8 +13,12 @@ public enum ErrorCode {
 
 	TOKEN_EXPIRED(HttpStatus.FORBIDDEN, "만료된 토큰입니다."), 
 	TOKEN_INVALID(HttpStatus.FORBIDDEN, "잘못된 토큰입니다."),
-	TOKEN_EMPTY(HttpStatus.FORBIDDEN, "토큰이 없습니다.")
+	TOKEN_EMPTY(HttpStatus.FORBIDDEN, "토큰이 없습니다."),	
 
+	TABLE_EMPTY(HttpStatus.BAD_REQUEST, "테이블명이 입력되지 않았습니다."),
+	TABLE_UNEXIST(HttpStatus.BAD_REQUEST, "존재하지 않는 테이블입니다."),
+	FIELD_UNEXIST(HttpStatus.BAD_REQUEST, "존재하지 않는 필드명입니다."),
+	
 	;
 
 	private final HttpStatus httpStatus;
