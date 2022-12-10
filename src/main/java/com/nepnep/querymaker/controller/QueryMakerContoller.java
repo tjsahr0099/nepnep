@@ -4,7 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,8 +22,9 @@ public class QueryMakerContoller {
 	@Autowired
 	private QueryMakerService queryMakerService;
 	
-	@GetMapping("/execute")
-	private List<Map<String,Object>> execute(Map<String, Object> input){
+	@PostMapping("/execute")
+	private Map<String,Object> execute(@RequestBody Map<String, Object> input){
+	
 		
 		log.info("컨트롤러 진입 input : {} " , input);
 		

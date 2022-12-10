@@ -5,6 +5,6 @@ import java.util.Map;
 
 public interface QueryMakerService {
 	
-	public List<Map<String,Object>> executeQuery(Map<String,Object> input);
+	public Map<String,Object> executeQuery(Map<String,Object> input);
 
 }
