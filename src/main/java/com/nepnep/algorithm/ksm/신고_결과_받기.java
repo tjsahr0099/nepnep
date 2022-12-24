@@ -2,18 +2,16 @@ package com.nepnep.algorithm.ksm;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * https://school.programmers.co.kr/learn/courses/30/lessons/92334?language=java
- * @author ì‚¬ìš©ì
+ * @author »ç¿ëÀÚ
  *
  */
-public class ì‹ ê³ _ê²°ê³¼_ë°›ê¸° {
+public class ½Å°í_°á°ú_¹Ş±â {
 
 	public static void main(String[] args) {
 		
@@ -45,6 +43,76 @@ class Solution2 {
 
 	public int[] solution(String[] id_list, String[] report, int k) {
         int[] answer = new int[id_list.length];
+        
+        //report ¸¦ Â©¶ó¼­ ½Å°í¹ŞÀº ID º° ½Å°íÇÑ »ç¶÷ ¸®½ºÆ®¸¦ ±¸ÇÑ´Ù.
+        Map<String,List<String>> map = new HashMap<String,List<String>>();
+        for(String report_one : report) {
+        	String[] report_split = report_one.split(" ");
+        	
+        	//½Å°íÇÑ ID
+        	String reportID = report_split[0];
+        	
+        	//½Å°í¹ŞÀº ID
+        	String reportedID = report_split[1]; 
+        	
+        	List<String> list = map.get(reportedID);
+        	
+        	// ¸®½ºÆ®°¡ ¾øÀ¸¸é »õ·Î »ı¼ºÇØ¼­ ½Å°íÇÑ ID ³Ö±â
+        	if(list==null) {
+        		list = new ArrayList<String>();
+        		list.add(reportID);
+        	}else {   
+        		// ¸®½ºÆ®°¡ ÀÖÀ¸¸é reportID°¡ ÀÖ´ÂÁö È®ÀÎÇÏ°í ³Ö±â ( Áßº¹Á¦°Å )
+	        	if(!list.contains(reportID)) {
+	        		list.add(reportID);
+	        	}
+        	}
+        	
+        	map.put(reportedID, list);
+        }
+        
+//        System.out.println(map.toString());
+        
+        Map<String,Integer> cntMap = new HashMap<String,Integer>();
+        
+        // ¸ŞÀÏ¹ŞÀ» °¹¼ö Ã¼Å©
+        for ( String key : map.keySet() ) {        	
+        	
+        	List<String> list = map.get(key);
+        	
+        	// ¸ŞÀÏ º¸³»´Â ½Å°íÈ½¼ö Ã¼Å©
+        	if(list.size() >= k) {
+//        		System.out.print("½Å°í¹ŞÀº»ç¶÷ : " + key + " ½Å°íÈ½¼ö " + k + "³ÑÀ½ : ");
+//        		System.out.println(list.toString());
+		        	for(String one : list) {
+		        		
+		        		Integer cnt = cntMap.get(one);
+		        		
+		        		if(cnt == null) {
+		        			cntMap.put(one, 1);
+		        		}else {
+		        			cntMap.put(one, ++cnt);	
+		        		}
+//		        		System.out.print("??:");
+//		        		System.out.println(cntMap.toString());
+		        	}
+		        	
+	        	
+        	}
+//            System.out.println("key : " + key +" / value : " + map.get(key));
+        }
+        
+//        System.out.println(cntMap);
+        
+        // ¾ÆÀÌµğ ¸®½ºÆ®·Î Æ÷¹® µ¹¸é¼­ ¸Ê¿¡ ¸î°³¾¿ ÀÖ´ÂÁö Ã¼Å©
+        for(int i=0;i<id_list.length;i++) {
+        	if(cntMap.get(id_list[i])!=null) {
+        		answer[i] =	cntMap.get(id_list[i]);
+        	}else {
+        		answer[i] =	0;
+        	}
+        	   
+        }
         
       
         
