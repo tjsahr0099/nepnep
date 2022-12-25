@@ -18,7 +18,7 @@ public class 신고_결과_받기 {
 		
 		Solution2 s = new Solution2();
 		
-		System.out.println(s.solution(id_list, report, 3));
+		System.out.println(s.solution(id_list, report, k));
 	}
 
 }
