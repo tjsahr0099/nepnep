@@ -1,7 +1,12 @@
-package com.nepnep.algorithm.jsw;
+package com.nepnep.algorithm;
 
 import java.util.*;
 
+/**
+ * TODO: 저자변경
+ * @author 성우
+ * 2022. 12. 25.
+ */
 public class 신고결과받기 {
     public int[] solution(String[] id_list, String[] report, int k) {
 

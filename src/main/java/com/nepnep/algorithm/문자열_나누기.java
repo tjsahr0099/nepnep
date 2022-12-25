@@ -1,5 +1,10 @@
-package com.nepnep.algorithm.ljy;
+package com.nepnep.algorithm;
 
+/**
+ * TODO : 저자 변경필요
+ * @author 이지영
+ * 2022. 12. 25.
+ */
 public class 문자열_나누기 {
 
 	public static void main(String[] args) {
@@ -7,24 +12,20 @@ public class 문자열_나누기 {
 		// String test = "abracadabra";
 		// String test = "aaabbaccccabba";
 		
-		Solution s = new Solution();
+		문자열_나누기 s = new 문자열_나누기();
 		
 		System.out.println(s.solution(test));
 	}
-
-}
-
-class Solution {
-    int answer = 0;
-    
-    public int solution(String s) {
-        checkString(s);
+	
+	public int solution(String s) {
+    	
+    	int answer = checkString(s);
         
         return answer;
-    }
-    
-    // 
+    }    
+     
     public int checkString(String s){
+    	int answer = 0;
         String firstString = "";
         int sameCnt = 0;
         int diffCnt = 0;
@@ -55,4 +56,5 @@ class Solution {
         
         return answer;
     }
+
 }

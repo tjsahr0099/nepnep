@@ -1,22 +1,25 @@
-package com.nepnep.algorithm.cwr;
+package com.nepnep.algorithm;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class 햄버거 {
+/**
+ * TODO : 저자변경필요
+ * @author 웅렬
+ * 2022. 12. 25.
+ */
+public class 햄버거_만들기 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] nIngredient = {2, 1, 1, 2, 3, 1, 2, 3, 1, 1, 2, 3, 1};
 		
-		Solution sol = new Solution();
+		햄버거_만들기 sol = new 햄버거_만들기();
 		System.out.println(sol.solution(nIngredient));		
 	}
-}
-
-class Solution {
-    public int solution(int[] ingredient) {
+	
+	public int solution(int[] ingredient) {
         int answer = 0;
         
         ArrayList<Integer> intList = new ArrayList<Integer>();
@@ -49,4 +52,5 @@ class Solution {
         	
         return answer;
     }
+	
 }

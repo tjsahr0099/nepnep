@@ -1,8 +1,13 @@
-package com.nepnep.algorithm.ljy;
+package com.nepnep.algorithm;
 
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * TODO : 저자변경
+ * @author 지영
+ * 2022. 12. 25.
+ */
 public class 성격_유형_검사하기 {
 
 	public static void main(String[] args) {
@@ -12,16 +17,13 @@ public class 성격_유형_검사하기 {
 		// String[] survey = {"TR", "RT", "TR"};
 		// int[] choices =  {7, 1, 3};
 		
-		Solution4 s = new Solution4();
+		성격_유형_검사하기 s = new 성격_유형_검사하기();
 		
 		System.out.println(s.solution(survey, choices));
 
 	}
-
-}
-
-class Solution4 {
-    public String solution(String[] survey, int[] choices) {
+	
+	public String solution(String[] survey, int[] choices) {
         // 유형별 점수 세팅
         Map<String, Integer> mbti = new HashMap<String, Integer>();
         mbti.put("R", 0);
@@ -54,4 +56,5 @@ class Solution4 {
         
         return answer;
     }
+
 }
