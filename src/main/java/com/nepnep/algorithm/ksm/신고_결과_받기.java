@@ -2,18 +2,16 @@ package com.nepnep.algorithm.ksm;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * https://school.programmers.co.kr/learn/courses/30/lessons/92334?language=java
- * @author ì‚¬ìš©ì
+ * @author »ç¿ëÀÚ
  *
  */
-public class ì‹ ê³ _ê²°ê³¼_ë°›ê¸° {
+public class ½Å°í_°á°ú_¹Ş±â {
 
 	public static void main(String[] args) {
 		
@@ -30,7 +28,7 @@ public class ì‹ ê³ _ê²°ê³¼_ë°›ê¸° {
 //		int k = 2;
 		
 		Solution2 s = new Solution2();
-		int[] answer = s.solution2(id_list, report, k);
+		int[] answer = s.solution(id_list, report, k);
 		
 		for(int i=0;i<answer.length;i++) {
 			System.out.println(answer[i]);
@@ -46,102 +44,77 @@ class Solution2 {
 	public int[] solution(String[] id_list, String[] report, int k) {
         int[] answer = new int[id_list.length];
         
-        Map<String,Integer> reportCnt = new LinkedHashMap<String,Integer>();
-        Map<String,Integer> mailCnt = new LinkedHashMap<String,Integer>();
-        
-        // 0ê°œë¡œ ì´ˆê¸°í™”
-        for (String id : id_list) {
-        	reportCnt.put(id, 0);
-        	mailCnt.put(id, 0);
+        //report ¸¦ Â©¶ó¼­ ½Å°í¹ŞÀº ID º° ½Å°íÇÑ »ç¶÷ ¸®½ºÆ®¸¦ ±¸ÇÑ´Ù.
+        Map<String,List<String>> map = new HashMap<String,List<String>>();
+        for(String report_one : report) {
+        	String[] report_split = report_one.split(" ");
+        	
+        	//½Å°íÇÑ ID
+        	String reportID = report_split[0];
+        	
+        	//½Å°í¹ŞÀº ID
+        	String reportedID = report_split[1]; 
+        	
+        	List<String> list = map.get(reportedID);
+        	
+        	// ¸®½ºÆ®°¡ ¾øÀ¸¸é »õ·Î »ı¼ºÇØ¼­ ½Å°íÇÑ ID ³Ö±â
+        	if(list==null) {
+        		list = new ArrayList<String>();
+        		list.add(reportID);
+        	}else {   
+        		// ¸®½ºÆ®°¡ ÀÖÀ¸¸é reportID°¡ ÀÖ´ÂÁö È®ÀÎÇÏ°í ³Ö±â ( Áßº¹Á¦°Å )
+	        	if(!list.contains(reportID)) {
+	        		list.add(reportID);
+	        	}
+        	}
+        	
+        	map.put(reportedID, list);
         }
         
-        // ì¤‘ë³µ ì œê±°
-        List<String> reportList = Arrays.asList(report)
-                .stream()
-                .distinct()
-                .collect(Collectors.toList());
+//        System.out.println(map.toString());
         
-        List<String> reportList2 = reportList;
+        Map<String,Integer> cntMap = new HashMap<String,Integer>();
         
-        // ì‹ ê³ ë‹¹í•œ ì‚¬ëŒì˜ ì¹´ìš´íŠ¸ êµ¬í•˜ê¸°
-        for (String r : reportList) {        	
+        // ¸ŞÀÏ¹ŞÀ» °¹¼ö Ã¼Å©
+        for ( String key : map.keySet() ) {        	
         	
-			//ì‹ ê³ ë‹¹í•œ ì‚¬ëŒ
-			String to = r.split(" ")[1];
-			
-			Integer toVal = reportCnt.get(to)==null?0:reportCnt.get(to);
-			Integer nextVal = ++toVal;
-			reportCnt.replace(to, nextVal);	
-			
-			// ì‹ ê³  íšŸìˆ˜ê°€ ì •ì§€ íšŸìˆ˜ì— ë„ë‹¬í•˜ë©´ ë©”ì¼ ì¹´ìš´íŠ¸ ì¦ê°€
-			if(nextVal==k) {
-				for (String r2 : reportList2) {
-					
-					//ì‹ ê³ í•œ ì‚¬ëŒ
-					String from = r2.split(" ")[0];	
-					
-					//ì‹ ê³ ë‹¹í•œ ì‚¬ëŒ
-					String to2 = r2.split(" ")[1];
-					
-					// ì‹ ê³ í•œ ì‚¬ëŒì„ ëª¨ë‘ ì°¾ì•„ ì¹´ìš´íŠ¸ 1ì”© ì¦ê°€
-					if(to2.equals(to)) {
-						mailCnt.put(from, mailCnt.get(from)+1);
-					}
-					
-				}
-			}
-			
-		}
-
-       
-        int i=0;
-        for (String key : mailCnt.keySet()) {
-
-        	answer[i]=mailCnt.get(key);
-        	i++;
+        	List<String> list = map.get(key);
+        	
+        	// ¸ŞÀÏ º¸³»´Â ½Å°íÈ½¼ö Ã¼Å©
+        	if(list.size() >= k) {
+//        		System.out.print("½Å°í¹ŞÀº»ç¶÷ : " + key + " ½Å°íÈ½¼ö " + k + "³ÑÀ½ : ");
+//        		System.out.println(list.toString());
+		        	for(String one : list) {
+		        		
+		        		Integer cnt = cntMap.get(one);
+		        		
+		        		if(cnt == null) {
+		        			cntMap.put(one, 1);
+		        		}else {
+		        			cntMap.put(one, ++cnt);	
+		        		}
+//		        		System.out.print("??:");
+//		        		System.out.println(cntMap.toString());
+		        	}
+		        	
+	        	
+        	}
+//            System.out.println("key : " + key +" / value : " + map.get(key));
         }
         
-        return answer;
-    }
-	
-	int matchCnt = 0;
-	
-	public int[] solution2(String[] id_list, String[] report, int k) {
-        int[] answer = new int[id_list.length];
+//        System.out.println(cntMap);
         
-        Map<String,String> mailing = new LinkedHashMap<String,String>();
-        
-        
-        for(String reportOne : report) {
-        	
-        	String f = reportOne.split(" ")[0];
-        	String t = reportOne.split(" ")[1];
-        	
-        	String _f = mailing.get(t)==null ? "" : mailing.get(t);
-        	if(!_f.matches("(.*)"+f+"(.*)")) {
-        		mailing.put(t,(_f+" "+f).trim());	
-        	}        	
-        	
+        // ¾ÆÀÌµğ ¸®½ºÆ®·Î Æ÷¹® µ¹¸é¼­ ¸Ê¿¡ ¸î°³¾¿ ÀÖ´ÂÁö Ã¼Å©
+        for(int i=0;i<id_list.length;i++) {
+        	if(cntMap.get(id_list[i])!=null) {
+        		answer[i] =	cntMap.get(id_list[i]);
+        	}else {
+        		answer[i] =	0;
+        	}
+        	   
         }
         
-        int i=0;
-        for(String id : id_list) {
-        	String str = mailing.get(id) == null ? "" : mailing.get(id);
-        	
-        	// ì‹ ê³  ì •ì§€ ê¸°ì¤€ ì²´í¬
-        	matchCnt=0;
-        	mailing.forEach((key,value)->{
-        		if(value.split(" ").length >= k) {
-            	
-        			if(value.matches("(.*)"+id+"(.*)")) {
-        				matchCnt++;        				
-        			}
-            	}
-        	});
-        	answer[i]=matchCnt;
-        	i++;
-        	
-        }        
+      
         
         return answer;
     }
