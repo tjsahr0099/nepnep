@@ -23,7 +23,7 @@ window - preferences - java - code style - code templates - comments - types 경
 ```
 public class 문자열_나누기 {
 	public static void main(String[] args) { 
-		성격_유형_검사하기 s = new 성격_유형_검사하기();
+		문자열_나누기 s = new 문자열_나누기();
 		s.solution();
 	}
 	
