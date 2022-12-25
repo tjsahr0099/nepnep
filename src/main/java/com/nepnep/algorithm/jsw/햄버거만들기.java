@@ -20,7 +20,9 @@ public class 햄버거만들기 {
                         for (int j = 0; j < 4; j++) {
                             list.remove(i);
                         }
-                        i = -1;
+                        if(i > 3){
+                            i -= 3;
+                            }
                     }
                 }
             }
