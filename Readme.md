@@ -1,8 +1,8 @@
 
 
-## ¾Ë°í¸®Áò ¹®Á¦ ÁøÇà ¹æ¹ı
-# 1. ÁÖ¼® ÅÛÇÃ¸´ Àû¿ë
-window - preferences - java - code style - code templates - comments - types °æ·Î¿¡
+## ì•Œê³ ë¦¬ì¦˜ ë¬¸ì œ ì§„í–‰ ë°©ë²•
+# 1. ì£¼ì„ í…œí”Œë¦¿ ì ìš©
+window - preferences - java - code style - code templates - comments - types ê²½ë¡œì—
 
 ```
 /**
@@ -11,19 +11,19 @@ window - preferences - java - code style - code templates - comments - types °æ·
  */ 
 ```
 
-ÀÔ·Â
+ì…ë ¥
 
-# 2. ºê·£Ä¡ »ı¼º
-·ÎÄÃ ¶Ç´Â github¿¡¼­ ºê·£Ä¡ »ı¼º. ¿¹½Ã¿Í ÆĞÅÏ µ¿ÀÏÇÏ°Ô 
-(¿¹½Ã) master -> algo/ksm/¹®ÀÚ¿­³ª´©±â
+# 2. ë¸Œëœì¹˜ ìƒì„±
+ë¡œì»¬ ë˜ëŠ” githubì—ì„œ ë¸Œëœì¹˜ ìƒì„±. ì˜ˆì‹œì™€ íŒ¨í„´ ë™ì¼í•˜ê²Œ 
+(ì˜ˆì‹œ) master -> algo/ksm/ë¬¸ìì—´ë‚˜ëˆ„ê¸°
 
 
-# 3. Å¬·¡½º, ±âº» ÇÔ¼ö »ı¼º ( Å¬·¡½º¸í, ¸ŞÀÎÇÔ¼ö, ½ÇÇàÆã¼Ç(solution) Çü½Ä ¸ÂÃß±â )
+# 3. í´ë˜ìŠ¤, ê¸°ë³¸ í•¨ìˆ˜ ìƒì„± ( í´ë˜ìŠ¤ëª…, ë©”ì¸í•¨ìˆ˜, ì‹¤í–‰í‘ì…˜(solution) í˜•ì‹ ë§ì¶”ê¸° )
 
 ```
-public class ¹®ÀÚ¿­_³ª´©±â {
+public class ë¬¸ìì—´_ë‚˜ëˆ„ê¸° {
 	public static void main(String[] args) { 
-		¼º°İ_À¯Çü_°Ë»çÇÏ±â s = new ¼º°İ_À¯Çü_°Ë»çÇÏ±â();
+		ì„±ê²©_ìœ í˜•_ê²€ì‚¬í•˜ê¸° s = new ì„±ê²©_ìœ í˜•_ê²€ì‚¬í•˜ê¸°();
 		s.solution();
 	}
 	
@@ -33,16 +33,16 @@ public class ¹®ÀÚ¿­_³ª´©±â {
 }
 ```
 
-# 4. °³¹ß ÈÄ ÇØ´ç ºê·£Ä¡ push
+# 4. ê°œë°œ í›„ í•´ë‹¹ ë¸Œëœì¹˜ push
 
-# 5. ½ºÅÍµğ¶§ Ã¼Å© ÈÄ ¼±Á¤µÈ 1ÀÎÀÇ ¼Ò½º ¸ÓÁö ÁøÇà
-
-
+# 5. ìŠ¤í„°ë””ë•Œ ì²´í¬ í›„ ì„ ì •ëœ 1ì¸ì˜ ì†ŒìŠ¤ ë¨¸ì§€ ì§„í–‰
 
 
 
 
-## ¤±¤±¤±¤±¤±¤±¤±¤±¤±¤±¤±¤±
+
+
+## ì°¸ê³ ì‚¬í•­
 # xss 
 https://blog.naver.com/PostView.naver?blogId=sun_zero2&logNo=222619027250&parentCategoryNo=&categoryNo=11&viewDate=&isShowPopularPosts=true&from=search
 https://homoefficio.github.io/2016/11/21/Spring%EC%97%90%EC%84%9C-JSON%EC%97%90-XSS-%EB%B0%A9%EC%A7%80-%EC%B2%98%EB%A6%AC-%ED%95%98%EA%B8%B0/
