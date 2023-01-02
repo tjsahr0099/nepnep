@@ -1,6 +1,5 @@
-
-
 # 알고리즘 문제 진행 방법
+
 ### 1. 주석 템플릿 적용
 window - preferences - java - code style - code templates - comments - types 경로에
 
@@ -39,7 +38,7 @@ public class 문자열_나누기 {
 
 
 
-
+---------------------------------------
 
 
 # 참고사항
