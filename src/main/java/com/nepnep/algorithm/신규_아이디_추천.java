@@ -1,11 +1,15 @@
 package com.nepnep.algorithm;
 
-public class 신규아이디추천 {
+/**
+ * @author 이지영
+ * 2023. 1. 7.
+ */
+public class 신규_아이디_추천 {
 
 	public static void main(String[] args) {
 		String new_id = "...!@BaT#*..y.abcdefghijklm";
 		
-		신규아이디추천 s = new 신규아이디추천();
+		신규_아이디_추천 s = new 신규_아이디_추천();
 		
 		System.out.println(s.solution(new_id));
 
