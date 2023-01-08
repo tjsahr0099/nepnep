@@ -1,9 +1,14 @@
 package com.nepnep.algorithm;
 
+/**
+ * @author 이지영
+ * 2023. 1. 7.
+ */
 public class 옹알이2 {
 
 	public static void main(String[] args) {
-		String[] babbling = {"ayaye", "uuu", "yeye", "yemawoo", "ayaayaa"};
+		String[] babbling = {"aya", "yee", "u", "maa"};
+		// String[] babbling = {"ayaye", "uuu", "yeye", "yemawoo", "ayaayaa"};
 		
 		옹알이2 s = new 옹알이2();
 		
