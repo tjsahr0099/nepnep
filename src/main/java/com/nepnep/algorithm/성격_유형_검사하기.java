@@ -4,8 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * TODO : 저자변경
- * @author 지영
+ * @author 이지영
  * 2022. 12. 25.
  */
 public class 성격_유형_검사하기 {

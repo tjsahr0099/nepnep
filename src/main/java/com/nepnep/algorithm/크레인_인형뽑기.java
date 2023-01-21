@@ -3,9 +3,8 @@ package com.nepnep.algorithm;
 import java.util.Stack;
 
 /**
- * 
- * @author cwr94
- *
+ * @author 최웅렬
+ * 2023. 1. 14.
  */
 public class 크레인_인형뽑기 {
 
