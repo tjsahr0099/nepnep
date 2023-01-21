@@ -1,5 +1,9 @@
 package com.nepnep.algorithm;
 
+/**
+ * @author 정성우
+ * 2023. 1. 7.
+ */
 public class 숫자_짝꿍 {
 
     public static void main(String[] args) {

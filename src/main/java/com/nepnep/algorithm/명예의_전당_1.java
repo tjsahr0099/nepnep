@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
 
+/**
+ * @author 이지영
+ * 2023. 1. 21.
+ */
 public class 명예의_전당_1 {
 
 	public static void main(String[] args) {

@@ -9,6 +9,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author 김선목
+ * 2023. 1. 14.
+ */
 public class 개인정보_수집_유효기간 {
 
 	public static void main(String[] args) throws ParseException {

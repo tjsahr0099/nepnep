@@ -5,8 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * TODO : 저자변경필요
- * @author 웅렬
+ * @author 최웅렬
  * 2022. 12. 25.
  */
 public class 햄버거_만들기 {

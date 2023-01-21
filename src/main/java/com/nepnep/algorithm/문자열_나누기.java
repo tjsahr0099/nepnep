@@ -1,7 +1,6 @@
 package com.nepnep.algorithm;
 
 /**
- * TODO : 저자 변경필요
  * @author 이지영
  * 2022. 12. 25.
  */
