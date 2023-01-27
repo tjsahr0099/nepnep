@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * @author 성우
- * 2022. 1. 21.
+ * 2023. 1. 21.
  */
 
 public class 완주하지_못한_선수 {
