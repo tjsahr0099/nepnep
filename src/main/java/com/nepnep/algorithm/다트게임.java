@@ -8,6 +8,7 @@ package com.nepnep.algorithm;
  * 2023. 2. 04.
  */
 
+
 public class 다트게임 {
 
 	public static void main(String[] args) {

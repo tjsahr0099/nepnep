@@ -3,8 +3,7 @@ package com.nepnep.algorithm;
 import java.util.*;
 
 /**
- * TODO: 저자변경
- * @author 성우
+ * @author 정성우
  * 2022. 12. 25.
  */
 public class 신고결과받기 {
